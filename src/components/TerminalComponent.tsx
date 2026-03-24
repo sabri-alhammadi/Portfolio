@@ -1,0 +1,156 @@
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Terminal } from "lucide-react";
+
+interface Line {
+  type: "input" | "output";
+  text: string;
+}
+
+const COMMANDS: Record<string, string[]> = {
+  help: [
+    "Available commands:",
+    "  help     — Show this help message",
+    "  creds    — Display certifications",
+    "  contact  — Show contact information",
+    "  skills   — List skill domains",
+    "  about    — About me",
+    "  clear    — Clear terminal",
+  ],
+  creds: [
+    "┌─ Certifications ─────────────────────┐",
+    "│  • CCNA — Cisco Certified Network Assoc.  │",
+    "│  • Cisco Cyber-Ops Associate               │",
+    "│  • CompTIA Security+                        │",
+    "│  • Google UX Design Certificate             │",
+    "│  • Google AI Essentials                     │",
+    "│  • Google Data Analytics                    │",
+    "└─────────────────────────────────────────┘",
+  ],
+  contact: [
+    "📧  email: hello@engineer.dev",
+    "🔗  linkedin: linkedin.com/in/engineer",
+    "🐙  github: github.com/engineer",
+    "🌐  portfolio: engineer.dev",
+  ],
+  skills: [
+    "▸ UI/UX Design — Figma, Adobe XD, Prototyping",
+    "▸ Cybersecurity — Pen Testing, SIEM, Forensics",
+    "▸ Networking — Cisco, VLANs, OSPF, BGP",
+    "▸ AI & Programming — Python, TensorFlow, React",
+    "▸ Data Analytics — SQL, Pandas, Tableau",
+  ],
+  about: [
+    "IT Engineer | UI/UX Designer | Cybersecurity Specialist",
+    "Passionate about building secure, intelligent, and",
+    "beautifully designed digital systems.",
+  ],
+};
+
+const TerminalComponent = () => {
+  const [lines, setLines] = useState<Line[]>([
+    { type: "output", text: "Welcome to the terminal. Type 'help' for available commands." },
+  ]);
+  const [input, setInput] = useState("");
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [lines]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const cmd = input.trim().toLowerCase();
+    if (!cmd) return;
+
+    const newLines: Line[] = [
+      ...lines,
+      { type: "input", text: `visitor@portfolio:~$ ${cmd}` },
+    ];
+
+    if (cmd === "clear") {
+      setLines([{ type: "output", text: "Terminal cleared." }]);
+      setInput("");
+      return;
+    }
+
+    const response = COMMANDS[cmd];
+    if (response) {
+      response.forEach((line) => newLines.push({ type: "output", text: line }));
+    } else {
+      newLines.push({ type: "output", text: `Command not found: '${cmd}'. Type 'help' for options.` });
+    }
+
+    setLines(newLines);
+    setInput("");
+  };
+
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <span className="font-mono text-sm text-neon-green tracking-[0.2em] uppercase">
+            // Terminal
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">
+            Command Line
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="glass-card overflow-hidden neon-glow-cyan"
+          onClick={() => inputRef.current?.focus()}
+        >
+          {/* Title bar */}
+          <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-secondary/50">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-destructive/70" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+              <div className="w-3 h-3 rounded-full bg-neon-green/70" />
+            </div>
+            <div className="flex items-center gap-2 ml-3">
+              <Terminal size={13} className="text-muted-foreground" />
+              <span className="font-mono text-xs text-muted-foreground">visitor@portfolio ~ bash</span>
+            </div>
+          </div>
+
+          {/* Terminal body */}
+          <div className="p-4 h-72 overflow-y-auto font-mono text-sm">
+            {lines.map((line, i) => (
+              <div key={i} className={`mb-1 ${line.type === "input" ? "text-neon-green" : "text-muted-foreground"}`}>
+                {line.text}
+              </div>
+            ))}
+
+            <form onSubmit={handleSubmit} className="flex items-center gap-2">
+              <span className="text-neon-green shrink-0">visitor@portfolio:~$</span>
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="flex-1 bg-transparent text-foreground outline-none font-mono text-sm caret-neon-cyan"
+                spellCheck={false}
+                autoComplete="off"
+              />
+              <span className="terminal-cursor text-neon-cyan">▌</span>
+            </form>
+            <div ref={bottomRef} />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default TerminalComponent;
