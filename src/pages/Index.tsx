@@ -3,24 +3,28 @@ import SkillMatrix from "@/components/SkillMatrix";
 import PortfolioGallery from "@/components/PortfolioGallery";
 import CyberVault from "@/components/CyberVault";
 import TerminalComponent from "@/components/TerminalComponent";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background relative">
+      <LanguageToggle />
       <HeroSection />
       <SkillMatrix />
       <PortfolioGallery />
       <CyberVault />
       <TerminalComponent />
 
-      {/* Footer */}
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="font-mono text-sm text-muted-foreground">
-            © 2026 — Engineered with precision
+            {t("footer.copy")}
           </span>
           <span className="font-mono text-xs text-muted-foreground">
-            <span className="text-neon-cyan">▸</span> secure · intelligent · designed
+            <span className="text-primary">▸</span> {t("footer.tagline")}
           </span>
         </div>
       </footer>
