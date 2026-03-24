@@ -1,27 +1,29 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Paintbrush, Server, Code } from "lucide-react";
-
-const filters = [
-  { id: "design", label: "Design", icon: Paintbrush },
-  { id: "infra", label: "Infrastructure", icon: Server },
-  { id: "code", label: "Code / AI", icon: Code },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const projects = [
-  { id: 1, category: "design", title: "Mobile Banking Redesign", desc: "Complete UI/UX overhaul for a fintech mobile application", tags: ["Figma", "Prototype", "User Research"] },
-  { id: 2, category: "design", title: "Healthcare Dashboard", desc: "Data-driven patient monitoring interface", tags: ["UI Design", "Accessibility", "Design System"] },
-  { id: 3, category: "design", title: "E-Commerce Platform", desc: "End-to-end shopping experience with micro-interactions", tags: ["Web Design", "Motion", "UX"] },
-  { id: 4, category: "infra", title: "Enterprise Network Architecture", desc: "Multi-site VLAN & routing infrastructure for 500+ endpoints", tags: ["Cisco", "VLAN", "OSPF"] },
-  { id: 5, category: "infra", title: "Cloud Migration Strategy", desc: "On-prem to hybrid cloud migration with zero downtime", tags: ["AWS", "Docker", "Terraform"] },
-  { id: 6, category: "infra", title: "Server Hardening Protocol", desc: "Security-focused server configuration & monitoring", tags: ["Linux", "Firewall", "Monitoring"] },
-  { id: 7, category: "code", title: "ML Threat Detection", desc: "Python-based anomaly detection for network traffic", tags: ["Python", "TensorFlow", "ML"] },
-  { id: 8, category: "code", title: "Data Pipeline Automation", desc: "ETL pipeline processing 10M+ records daily", tags: ["Python", "SQL", "Airflow"] },
-  { id: 9, category: "code", title: "Portfolio Web App", desc: "React-based interactive portfolio with terminal emulator", tags: ["React", "TypeScript", "Tailwind"] },
+  { id: 1, category: "design", title: "Mobile App UI Design", desc: "Complete UI/UX for a mobile application with user research", tags: ["Figma", "Prototype", "User Research"] },
+  { id: 2, category: "design", title: "Dashboard Interface", desc: "Data-driven monitoring dashboard with accessibility focus", tags: ["UI Design", "Accessibility", "Design System"] },
+  { id: 3, category: "design", title: "E-Commerce Web Design", desc: "End-to-end shopping experience with micro-interactions", tags: ["Web Design", "Motion", "UX"] },
+  { id: 4, category: "infra", title: "Network Architecture Design", desc: "Enterprise VLAN & routing infrastructure for campus network", tags: ["Cisco", "VLAN", "OSPF"] },
+  { id: 5, category: "infra", title: "Security Assessment", desc: "Vulnerability assessment and penetration testing methodology", tags: ["Pen Testing", "SIEM", "Hardening"] },
+  { id: 6, category: "infra", title: "Server Configuration", desc: "Security-focused server setup and monitoring implementation", tags: ["Linux", "Firewall", "Monitoring"] },
+  { id: 7, category: "code", title: "React Portfolio App", desc: "Interactive portfolio with terminal emulator and animations", tags: ["React", "TypeScript", "Tailwind"] },
+  { id: 8, category: "code", title: "Data Analysis Pipeline", desc: "Data processing and visualization with Python tooling", tags: ["Python", "Pandas", "Analytics"] },
+  { id: 9, category: "code", title: "Responsive Web App", desc: "Full-stack web application with modern UI framework", tags: ["React", "Bootstrap", "JavaScript"] },
 ];
 
 const PortfolioGallery = () => {
   const [active, setActive] = useState("design");
+  const { t } = useLanguage();
+
+  const filters = [
+    { id: "design", label: t("portfolio.design"), icon: Paintbrush },
+    { id: "infra", label: t("portfolio.infra"), icon: Server },
+    { id: "code", label: t("portfolio.code"), icon: Code },
+  ];
 
   const filtered = projects.filter((p) => p.category === active);
 
@@ -35,15 +37,14 @@ const PortfolioGallery = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="font-mono text-sm text-neon-green tracking-[0.2em] uppercase">
-            // Portfolio
+          <span className="font-mono text-sm text-accent tracking-[0.2em] uppercase">
+            {t("portfolio.label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">
-            The Hybrid Portfolio
+            {t("portfolio.title")}
           </h2>
         </motion.div>
 
-        {/* Filters */}
         <div className="flex flex-wrap gap-3 mb-10">
           {filters.map((f) => (
             <button
@@ -61,7 +62,6 @@ const PortfolioGallery = () => {
           ))}
         </div>
 
-        {/* Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
