@@ -21,7 +21,7 @@ const COMMANDS: Record<string, string[]> = {
   creds: [
     "┌─ Certifications ─────────────────────────┐",
     "│  • Mishkah Institute — Web Design          │",
-    "│  • CCNA — Networking                        │",
+    "│  • Networking Fundamentals                   │",
     "│  • Cybersecurity Fundamentals               │",
     "│  • UI/UX Design Certificate                 │",
     "│  • App Development Certificate              │",
@@ -36,7 +36,7 @@ const COMMANDS: Record<string, string[]> = {
   skills: [
     "▸ UI/UX Design — Figma, Adobe XD, Prototyping",
     "▸ Web & Mobile Dev — React, TypeScript, Tailwind, Bootstrap",
-    "▸ Technical Ops — Networking (CCNA), OS Management, IT Support",
+    "▸ Technical Ops — Networking, OS Management, IT Support",
     "▸ Special — Fast Typing (AR/EN), Data Analytics, AI, Cybersecurity",
   ],
   bio: [
