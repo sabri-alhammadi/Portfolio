@@ -26,6 +26,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "hero.intelligent": { en: "Intelligent", ar: "ذكي" },
   "hero.connected": { en: "Connected", ar: "متصل" },
   "hero.location": { en: "Taiz, Yemen", ar: "تعز، اليمن" },
+  "hero.downloadCV": { en: "Download CV", ar: "تحميل السيرة الذاتية" },
 
   // Skills
   "skills.label": { en: "// Skill Matrix", ar: "// مصفوفة المهارات" },
