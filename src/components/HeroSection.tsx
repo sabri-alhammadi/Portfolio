@@ -39,11 +39,9 @@ const HeroSection = () => {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6"
         >
-          <span className="text-primary neon-text-cyan">{t("hero.name")}</span>
-          <br />
           <span className="text-foreground">{t("hero.headline1")}</span>
           <br />
           <span className="text-foreground">{t("hero.headline2")}</span>
