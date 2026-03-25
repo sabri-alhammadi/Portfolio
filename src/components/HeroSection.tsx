@@ -24,7 +24,7 @@ const HeroSection = () => {
           <img
             src={sabriPhoto}
             alt="Sabri Derhim"
-            className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
+            className="w-40 h-40 md:w-52 md:h-52 rounded-full mx-auto object-cover border-2 border-primary/50 shadow-[0_0_30px_hsl(var(--primary)/0.3)]"
           />
         </motion.div>
 
