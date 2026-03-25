@@ -14,10 +14,19 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 -end-32 w-96 h-96 rounded-full bg-accent/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-6 text-primary neon-text-cyan"
+        >
+          {t("hero.name")}
+        </motion.h2>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="flex items-center justify-center gap-3 mb-8"
         >
           <div className="h-px w-12 bg-primary/50" />
@@ -30,11 +39,9 @@ const HeroSection = () => {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6"
         >
-          <span className="text-primary neon-text-cyan">{t("hero.name")}</span>
-          <br />
           <span className="text-foreground">{t("hero.headline1")}</span>
           <br />
           <span className="text-foreground">{t("hero.headline2")}</span>
