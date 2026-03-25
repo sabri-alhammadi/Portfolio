@@ -26,7 +26,7 @@ const SkillMatrix = () => {
       icon: Server,
       titleKey: "skill.techops.title",
       descKey: "skill.techops.desc",
-      certs: ["CCNA Level", "OS Management", "IT Support"],
+      certs: ["OS Management", "IT Support", "Networking"],
       color: "neon-green" as const,
       glowClass: "hover:shadow-[0_0_30px_hsl(160_100%_45%/0.15)]",
     },

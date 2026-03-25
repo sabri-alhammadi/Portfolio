@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const certs = [
   { icon: GraduationCap, title: "Mishkah Institute — Web Design", category: "Design" },
-  { icon: Network, title: "CCNA — Networking", category: "Networking" },
+  { icon: Network, title: "Networking Fundamentals", category: "Networking" },
   { icon: ShieldCheck, title: "Cybersecurity Fundamentals", category: "Security" },
   { icon: Award, title: "UI/UX Design Certificate", category: "Design" },
   { icon: Code2, title: "App Development Certificate", category: "Development" },
