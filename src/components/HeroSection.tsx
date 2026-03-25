@@ -14,10 +14,19 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 -end-32 w-96 h-96 rounded-full bg-accent/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-6 text-primary neon-text-cyan"
+        >
+          {t("hero.name")}
+        </motion.h2>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="flex items-center justify-center gap-3 mb-8"
         >
           <div className="h-px w-12 bg-primary/50" />
