@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Shield, Cpu, Network, MapPin } from "lucide-react";
+import { Shield, Cpu, Network, MapPin, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
