@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Shield, Cpu, Network, MapPin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import sabriPhoto from "@/assets/sabri-photo.jpg";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -14,6 +15,19 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 -end-32 w-96 h-96 rounded-full bg-accent/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="mb-6"
+        >
+          <img
+            src={sabriPhoto}
+            alt="Sabri Derhim"
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
+          />
+        </motion.div>
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
