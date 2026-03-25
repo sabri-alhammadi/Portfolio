@@ -53,10 +53,24 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="flex items-center justify-center gap-2 mb-12 text-muted-foreground"
+          className="flex items-center justify-center gap-2 mb-8 text-muted-foreground"
         >
           <MapPin size={14} className="text-primary" />
           <span className="font-mono text-sm">{t("hero.location")}</span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="mb-12"
+        >
+          <Button asChild variant="outline" className="font-mono border-primary/50 text-primary hover:bg-primary/10 hover:text-primary gap-2">
+            <a href="/sabri_derhim_cv.pdf" download>
+              <Download size={16} />
+              {t("hero.downloadCV")}
+            </a>
+          </Button>
         </motion.div>
 
         <motion.div
