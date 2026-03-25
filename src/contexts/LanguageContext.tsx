@@ -15,6 +15,7 @@ const translations: Record<string, Record<Lang, string>> = {
     en: "IT Engineer · UI/UX Designer · Web Developer",
     ar: "مهندس تقنية معلومات · مصمم واجهات · مطور ويب",
   },
+  "hero.name": { en: "Sabri Derhim", ar: "صبري درهم" },
   "hero.headline1": { en: "Engineering Secure &", ar: "هندسة تجارب" },
   "hero.headline2": { en: "Intelligent Digital", ar: "رقمية آمنة" },
   "hero.headline3": { en: "Experiences", ar: "وذكية" },
