@@ -21,7 +21,7 @@ const COMMANDS: Record<string, string[]> = {
   creds: [
     "┌─ Certifications ─────────────────────────┐",
     "│  • Mishkah Institute — Web Design          │",
-    "│  • CCNA — Networking                        │",
+    "│  • Networking Fundamentals                   │",
     "│  • Cybersecurity Fundamentals               │",
     "│  • UI/UX Design Certificate                 │",
     "│  • App Development Certificate              │",
