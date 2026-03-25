@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Shield, Cpu, Network, MapPin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import sabriPhoto from "@/assets/sabri-photo.jpg";
 
 const HeroSection = () => {
   const { t } = useLanguage();
