@@ -33,9 +33,11 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
         >
+          <span className="text-primary neon-text-cyan">{t("hero.name")}</span>
+          <br />
           <span className="text-foreground">{t("hero.headline1")}</span>
           <br />
-          <span className="text-primary neon-text-cyan">{t("hero.headline2")}</span>
+          <span className="text-foreground">{t("hero.headline2")}</span>
           <br />
           <span className="text-foreground">{t("hero.headline3")}</span>
         </motion.h1>
