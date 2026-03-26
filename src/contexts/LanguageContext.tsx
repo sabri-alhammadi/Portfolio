@@ -77,6 +77,19 @@ const translations: Record<string, Record<Lang, string>> = {
   "terminal.label": { en: "// Terminal", ar: "// الطرفية" },
   "terminal.title": { en: "Command Line", ar: "سطر الأوامر" },
 
+  // Education
+  "edu.label": { en: "// Education", ar: "// التعليم" },
+  "edu.title": { en: "Academic Background", ar: "الخلفية الأكاديمية" },
+  "edu.degree": {
+    en: "Bachelor's Degree in Information Technology Engineering",
+    ar: "بكالوريوس هندسة تقنية المعلومات",
+  },
+  "edu.university": { en: "Taiz University", ar: "جامعة تعز" },
+  "edu.faculty": {
+    en: "Faculty of Engineering and Information Technology",
+    ar: "كلية الهندسة وتقنية المعلومات",
+  },
+
   // Footer
   "footer.copy": { en: "© 2025 Sabri Derhim — Engineered with precision", ar: "© 2025 صبري درهم — صُنع بإتقان" },
   "footer.tagline": { en: "secure · intelligent · designed", ar: "آمن · ذكي · مصمم" },
