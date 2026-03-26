@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import SkillMatrix from "@/components/SkillMatrix";
+import EducationSection from "@/components/EducationSection";
 import PortfolioGallery from "@/components/PortfolioGallery";
 import CyberVault from "@/components/CyberVault";
 import TerminalComponent from "@/components/TerminalComponent";
