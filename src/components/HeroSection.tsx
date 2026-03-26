@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Shield, Cpu, Network, MapPin, Download, Mail } from "lucide-react";
+import { Shield, Cpu, Network, MapPin, Download, Mail, Github, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import sabriPhoto from "@/assets/sabri-photo.jpg";
+import meshkatCert from "@/assets/meshkat-certificate.jpg";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -19,7 +20,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="mb-6"
+          className="mb-6 mt-8"
         >
           <img
             src={sabriPhoto}
@@ -86,7 +87,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="mb-12"
+          className="flex items-center justify-center gap-4 mb-12 flex-wrap"
         >
           <Button asChild variant="outline" className="font-mono border-primary/50 text-primary hover:bg-primary/10 hover:text-primary gap-2">
             <a href="/sabri_derhim_cv.pdf" download>
@@ -94,6 +95,29 @@ const HeroSection = () => {
               {t("hero.downloadCV")}
             </a>
           </Button>
+          <Button asChild variant="outline" className="font-mono border-primary/50 text-primary hover:bg-primary/10 hover:text-primary gap-2">
+            <a href="https://github.com/sabri-alhammadi" target="_blank" rel="noopener noreferrer">
+              <Github size={16} />
+              GitHub
+            </a>
+          </Button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-12"
+        >
+          <p className="font-mono text-sm text-primary mb-4 flex items-center justify-center gap-2">
+            <Award size={16} />
+            Meshkat Education — Web Design Certificate
+          </p>
+          <img
+            src={meshkatCert}
+            alt="Meshkat Education Web Design Certificate"
+            className="max-w-md w-full mx-auto rounded-lg border border-primary/30 shadow-[0_0_20px_hsl(var(--primary)/0.15)]"
+          />
         </motion.div>
 
         <motion.div
