@@ -90,6 +90,32 @@ const translations: Record<string, Record<Lang, string>> = {
     ar: "كلية الهندسة وتقنية المعلومات",
   },
 
+  // Services
+  "services.label": { en: "// Services", ar: "// الخدمات" },
+  "services.title": {
+    en: "Building and Protecting Your Digital Ecosystem",
+    ar: "بناء وحماية نظامك الرقمي",
+  },
+  "services.desc": {
+    en: "I believe technology should be a solution, not a barrier. That is why I provide web design services that give you a powerful presence, backed by deep expertise in network engineering and IT support. My goal is to ensure that every technical detail of your project operates in perfect harmony and with zero downtime.",
+    ar: "أؤمن بأن التكنولوجيا يجب أن تكون حلاً لا عائقاً. لهذا أقدم خدمات تصميم ويب تمنحك حضوراً قوياً، مدعومة بخبرة عميقة في هندسة الشبكات والدعم التقني. هدفي هو ضمان أن كل تفصيل تقني في مشروعك يعمل بتناغم تام وبدون أي توقف.",
+  },
+  "services.web.title": { en: "Web Design & Development", ar: "تصميم وتطوير الويب" },
+  "services.web.desc": {
+    en: "Modern, responsive websites and applications crafted with precision and performance in mind.",
+    ar: "مواقع وتطبيقات حديثة ومتجاوبة مصممة بدقة وأداء عالٍ.",
+  },
+  "services.network.title": { en: "Network Engineering", ar: "هندسة الشبكات" },
+  "services.network.desc": {
+    en: "Robust network infrastructure design, configuration, and optimization for reliable connectivity.",
+    ar: "تصميم وتكوين وتحسين البنية التحتية للشبكات لضمان اتصال موثوق.",
+  },
+  "services.it.title": { en: "IT Support", ar: "الدعم التقني" },
+  "services.it.desc": {
+    en: "Comprehensive technical support ensuring your systems run smoothly with zero downtime.",
+    ar: "دعم تقني شامل يضمن تشغيل أنظمتك بسلاسة وبدون أي توقف.",
+  },
+
   // Footer
   "footer.copy": { en: "© 2025 Sabri Derhim — Engineered with precision", ar: "© 2025 صبري درهم — صُنع بإتقان" },
   "footer.tagline": { en: "secure · intelligent · designed", ar: "آمن · ذكي · مصمم" },

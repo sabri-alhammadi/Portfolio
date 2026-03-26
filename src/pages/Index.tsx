@@ -16,6 +16,7 @@ const Index = () => {
       <LanguageToggle />
       <HeroSection />
       <SkillMatrix />
+      <ServicesSection />
       <EducationSection />
       <PortfolioGallery />
       <CyberVault />
