@@ -6,6 +6,7 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import CyberVault from "@/components/CyberVault";
 import TerminalComponent from "@/components/TerminalComponent";
 import LanguageToggle from "@/components/LanguageToggle";
+import MobileMenu from "@/components/MobileMenu";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
