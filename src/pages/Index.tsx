@@ -6,6 +6,7 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import CyberVault from "@/components/CyberVault";
 import TerminalComponent from "@/components/TerminalComponent";
 import LanguageToggle from "@/components/LanguageToggle";
+import MobileMenu from "@/components/MobileMenu";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <MobileMenu />
       <LanguageToggle />
       <HeroSection />
       <SkillMatrix />
