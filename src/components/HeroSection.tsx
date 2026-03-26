@@ -3,6 +3,7 @@ import { Shield, Cpu, Network, MapPin, Download, Mail, Github, Award } from "luc
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import sabriPhoto from "@/assets/sabri-photo.jpg";
+import meshkatCert from "@/assets/meshkat-certificate.jpg";
 
 const HeroSection = () => {
   const { t } = useLanguage();
