@@ -18,7 +18,7 @@ const SkillMatrix = () => {
       icon: Code2,
       titleKey: "skill.webdev.title",
       descKey: "skill.webdev.desc",
-      certs: ["React", "TypeScript", "Tailwind CSS", "Bootstrap"],
+      certs: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Next.js", "Tailwind CSS", "Bootstrap"],
       color: "neon-cyan" as const,
       glowClass: "hover:shadow-[0_0_30px_hsl(185_100%_50%/0.15)]",
     },
