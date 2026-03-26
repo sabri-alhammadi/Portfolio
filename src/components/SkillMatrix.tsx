@@ -38,14 +38,6 @@ const SkillMatrix = () => {
       color: "neon-cyan" as const,
       glowClass: "hover:shadow-[0_0_30px_hsl(185_100%_50%/0.15)]",
     },
-    {
-      icon: Shield,
-      titleKey: "skill.cyber.title",
-      descKey: "skill.cyber.desc",
-      certs: ["Pen Testing", "SIEM", "Secure Coding"],
-      color: "neon-green" as const,
-      glowClass: "hover:shadow-[0_0_30px_hsl(160_100%_45%/0.15)]",
-    },
   ];
 
   const colorMap: Record<string, string> = {
